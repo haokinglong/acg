@@ -35,7 +35,7 @@ public class AutoGenerateCode {
 				// 模板路径 示例："/src/main/resources/templates"
 				.templatePath(getRootPath())
 				//示例： "jdbc:oracle:thin:@kinglong.net:1521/"
-				.dbUrl("jdbc:oracle:thin:@btzh.net:1521/")
+				.dbUrl("jdbc:oracle:thin:@kinglong.net:1521/")
 				//示例： "orcl"
 				.dbInstanceName("orcl")
 				//示例： "zz9x"
