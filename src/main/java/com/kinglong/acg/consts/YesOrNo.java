@@ -11,12 +11,12 @@ public enum YesOrNo {
 	/**
 	 * 否
 	 */
-	NO(0, "N"),
+	NO(0, "NO"),
 
 	/**
 	 * 是
 	 */
-	YES(1, "Y");
+	YES(1, "YES");
 
 	private Integer code;
 	private String value;

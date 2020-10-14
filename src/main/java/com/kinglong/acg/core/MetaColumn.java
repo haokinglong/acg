@@ -63,6 +63,11 @@ public class MetaColumn implements Serializable {
 	private YesOrNo nullable;
 
 	/**
+	 * 是否是主键
+	 */
+	private YesOrNo isPrimaryKey;
+
+	/**
 	 * 字段操作,该字段值取自cmt字段末尾数据,默认一个字段只可有一个操作,目前的操作有:
 	 * <p>
 	 * {@code Q} 普通精确查询 {@code A=?}

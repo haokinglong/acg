@@ -29,14 +29,15 @@ public class GlobalConfig {
 	private String templatePath;
 
 	/**
+	 * 数据库名称
+	 */
+	private String schema;
+
+	/**
 	 * 数据库连接：jdbc:oracle:thin:@kinglong.net:1521/
 	 */
 	private String dbUrl;
 
-	/**
-	 * 数据库实例名：orcl
-	 */
-	private String dbInstanceName;
 	/**
 	 * 数据库用户名
 	 */
@@ -110,9 +111,4 @@ public class GlobalConfig {
 	 * 是否需要生成resource类
 	 */
 	private Boolean resourceNeed;
-
-	/**
-	 * 是否需要生成vue
-	 */
-	private Boolean vueNeed;
 }

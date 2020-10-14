@@ -1,5 +1,7 @@
 package com.kinglong.acg.core;
 
+import com.kinglong.acg.consts.ColumnDataType;
+import com.kinglong.acg.consts.YesOrNo;
 import com.kinglong.acg.utl.OracleUtil;
 import com.kinglong.acg.utl.Util;
 import lombok.AllArgsConstructor;
@@ -34,6 +36,16 @@ public class MetaTable implements Serializable {
 	 * 表的主键：比如 demo_id
 	 */
 	private String primaryKey;
+
+	/**
+	 * 表的主键字段类型
+	 */
+	private ColumnDataType primaryKeyType;
+
+	/**
+	 * 表的主键字段注释
+	 */
+	private String primaryKeyCmt;
 
 	/**
 	 * 表的注释
@@ -93,7 +105,6 @@ public class MetaTable implements Serializable {
 
 	private Date date;
 
-
 	public String getCamelName() {
 		return Util.getCamelName(name);
 	}
@@ -104,5 +115,9 @@ public class MetaTable implements Serializable {
 
 	public String getPrimaryKeyCamelName() {
 		return Util.getCamelName(primaryKey);
+	}
+
+	public String getPrimaryKeyType() {
+		return primaryKeyType.getCodeName();
 	}
 }

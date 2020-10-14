@@ -74,7 +74,7 @@ public class Action {
 	public static MetaDatabase buildDatabaseInfo(GlobalConfig config, List<MetaTable> tbs) {
 		MetaDatabase.MetaDatabaseBuilder databaseBuilder = MetaDatabase.builder()
 				.url(config.getDbUrl())
-				.instanceName(config.getDbInstanceName())
+				.schema(config.getSchema())
 				.username(config.getDbUsername())
 				.password(config.getDbPassword());
 
@@ -117,31 +117,11 @@ public class Action {
 				createResource(table, config.getResourcePath());
 				log.info("resource 创建完毕");
 			}
-			if (config.getVueNeed() && !StringUtils.isBlank(config.getVuePath())) {
-				createVue(table, config.getVuePath());
-				log.info("vue创建完毕");
-			}
 
 			log.info(table.getName() + "创建完毕");
 		}
 	}
 
-
-	/**
-	 * 创建vue
-	 *
-	 * @param table
-	 * @throws IOException
-	 * @throws TemplateException
-	 */
-	public static void createVue(MetaTable table, String path) throws IOException, TemplateException {
-		log.info("开始创建vue");
-
-		Template temp = cfg.getTemplate("vue.ftl");
-		File file = new File(path + "/" + table.getCamelNameToUppercase() + ".vue");
-
-		generate(temp, file, table);
-	}
 
 	/**
 	 * 创建实体类
@@ -170,7 +150,7 @@ public class Action {
 		log.info("开始创建Dao");
 
 		Template temp = cfg.getTemplate("dao.ftl");
-		File file = new File(path + "/" + table.getCamelNameToUppercase() + "Dao.java");
+		File file = new File(path + "/" + table.getCamelNameToUppercase() + "Mapper.java");
 
 		generate(temp, file, table);
 	}
@@ -185,8 +165,8 @@ public class Action {
 	public static void createDaoImpl(MetaTable table, String path) throws IOException, TemplateException {
 		log.info("开始创建DaoImpl");
 
-		Template temp = cfg.getTemplate("daoImpl.ftl");
-		File file = new File(path + "/" + table.getCamelNameToUppercase() + "DaoImpl.java");
+		Template temp = cfg.getTemplate("mapper.ftl");
+		File file = new File(path + "/" + table.getCamelNameToUppercase() + "Mapper.xml");
 
 		generate(temp, file, table);
 	}
@@ -277,8 +257,8 @@ public class Action {
 		if (StringUtils.isBlank(globalConfig.getDbUrl())) {
 			throw new IllegalArgumentException("dbUrl 不能为空");
 		}
-		if (StringUtils.isBlank(globalConfig.getDbInstanceName())) {
-			throw new IllegalArgumentException("dbInstanceName 不能为空");
+		if (StringUtils.isBlank(globalConfig.getSchema())) {
+			throw new IllegalArgumentException("schema 不能为空");
 		}
 		if (StringUtils.isBlank(globalConfig.getDbUsername())) {
 			throw new IllegalArgumentException("dbUsername 不能为空");

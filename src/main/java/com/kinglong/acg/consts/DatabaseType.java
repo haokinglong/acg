@@ -8,6 +8,7 @@ package com.kinglong.acg.consts;
  */
 public enum DatabaseType {
 
-	ORACLE;
+	ORACLE,
+	MYSQL;
 
 }

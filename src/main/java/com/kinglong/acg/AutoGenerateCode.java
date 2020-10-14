@@ -24,40 +24,32 @@ public class AutoGenerateCode {
 	public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException, TemplateException {
 		List<MetaTable> tbs = new ArrayList<>();
 		//如果有多张表,请在这添加多张表的信息,表名即可,大小写均可
-		tbs.add(MetaTable.builder().name("sms_record").build());
+		tbs.add(MetaTable.builder().name("user").build());
 
 		//配置1：数据库,文件路径配置
 		GlobalConfig.GlobalConfigBuilder globalConfigBuilder = GlobalConfig.builder()
 				//包名
-				.packageName("com.kinglong")
+				.packageName("com.longfor")
 				//作者姓名
 				.author("haojinlong")
 				// 模板路径 示例："/src/main/resources/templates"
 				.templatePath(getRootPath())
-				//示例： "jdbc:oracle:thin:@kinglong.net:1521/"
-				.dbUrl("jdbc:oracle:thin:@kinglong.net:1521/")
-				//示例： "orcl"
-				.dbInstanceName("orcl")
-				//示例： "zz9x"
-				.dbUsername("grid_sqet")
+				//示例： "jdbc:mysql://192.168.26.129:3306/"
+				.dbUrl("jdbc:mysql://192.168.26.129:3306/")
+				//示例： "wstro"
+				.schema("wstro")
+				//示例： "root"
+				.dbUsername("root")
 				//示例： "123456"
-				.dbPassword("oA1cC0cH1eK2qP0f")
+				.dbPassword("root")
 
 
-				//示例： "/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/entity/business"
-				.entityPath("/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/entity")
-				//示例： "/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/dao"
-				.daoPath("/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/dao")
-				//示例： "/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/dao/impl"
-				.daoImplPath("/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/dao/impl")
-				//示例： "/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/service"
-				.servicePath("/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/service")
-				//示例： "/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/service/impl"
-				.serviceImplPath("/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/service/impl")
-				//示例： "/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/resource"
-				.resourcePath("/Users/haojinlong/mycode/grid/grid-wgfw-api/src/main/java/com/kinglong/resource")
-				//示例： "/Users/haojinlong/mycode/code-generate/acg/src/main/java/com/kinglong/acg/vue"
-				.vuePath("/Users/haojinlong/mycode/code-generate/acg/src/main/java/com/kinglong/acg/vue");
+				.entityPath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/entity")
+				.daoPath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/mapper")
+				.daoImplPath("E:/sourcecode/longchat-simple/src/main/resources/mapper")
+				.servicePath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/service")
+				.serviceImplPath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/service/impl")
+				.resourcePath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/controller");
 
 		//配置2：哪些需要生成,哪些不要生成
 		GlobalConfig globalConfig = globalConfigBuilder
@@ -67,12 +59,11 @@ public class AutoGenerateCode {
 				.serviceNeed(true)
 				.serviceImplNeed(true)
 				.resourceNeed(true)
-				.vueNeed(false)
 				.build();
 
 		Action action = new Action();
 		//如果想生成数据库内全部表的代码,tbs传null即可
-		action.start(globalConfig, tbs, true);
+		action.start(globalConfig, tbs, false);
 	}
 
 	/**

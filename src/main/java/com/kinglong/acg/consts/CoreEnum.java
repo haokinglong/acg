@@ -9,6 +9,11 @@ package com.kinglong.acg.consts;
 public enum CoreEnum {
 
 	/**
+	 * 主键
+	 */
+	PRIMARY_KEY("PRI"),
+
+	/**
 	 * 数据类型
 	 */
 	DATA_TYPE("data_type"),
@@ -16,7 +21,7 @@ public enum CoreEnum {
 	/**
 	 * 数据长度
 	 */
-	DATA_LENGTH("data_length"),
+	DATA_LENGTH("character_maximum_length"),
 
 	/**
 	 * 数据精度
@@ -26,17 +31,22 @@ public enum CoreEnum {
 	/**
 	 * 是否为空
 	 */
-	NULLABLE("nullable"),
+	NULLABLE("is_nullable"),
 
 	/**
-	 * 主键
+	 * 列是否是索引
 	 */
-	PRIMARY_KEY("primary_key"),
+	COLUMN_KEY("column_key"),
 
 	/**
 	 * 数据注释
 	 */
-	COMMENTS("comments"),
+	COMMENTS("column_comment"),
+
+	/**
+	 * 数据表注释
+	 */
+	TABLE_COMMENT("table_comment"),
 
 	/**
 	 * 表名

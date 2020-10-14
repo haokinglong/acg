@@ -21,18 +21,18 @@ import java.util.List;
 @NoArgsConstructor
 public class MetaDatabase implements Serializable {
 
-	private static final long serialVersionUID = -2055033908590325475L;
+    private static final long serialVersionUID = -2055033908590325475L;
 
-	private String cmt;
-	private String description;
-	private DatabaseType type;
-	private String name;
-	private List<MetaTable> metaTables;
-	private String password;
-	private String username;
-	private String url;
-	/**
-	 * 实例名：比如 orcl
-	 */
-	private String instanceName;
+    private String cmt;
+    private String description;
+    private DatabaseType type;
+    private String name;
+    private List<MetaTable> metaTables;
+    private String password;
+    private String username;
+    /**
+     * 数据库名称
+     */
+    private String schema;
+    private String url;
 }
