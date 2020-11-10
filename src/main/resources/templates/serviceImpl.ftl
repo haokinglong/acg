@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 import ${packageName?lower_case}.entity.${camelName?cap_first};
-import ${packageName?lower_case}.dao.${camelName?cap_first}Mapper;
+import ${packageName?lower_case}.mapper.${camelName?cap_first}Mapper;
 import ${packageName?lower_case}.service.${camelName?cap_first}Service;
 
 /**

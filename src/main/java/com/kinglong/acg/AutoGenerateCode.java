@@ -24,7 +24,7 @@ public class AutoGenerateCode {
 	public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException, TemplateException {
 		List<MetaTable> tbs = new ArrayList<>();
 		//如果有多张表,请在这添加多张表的信息,表名即可,大小写均可
-		tbs.add(MetaTable.builder().name("user").build());
+		tbs.add(MetaTable.builder().name("rel_app_alm_result").build());
 
 		//配置1：数据库,文件路径配置
 		GlobalConfig.GlobalConfigBuilder globalConfigBuilder = GlobalConfig.builder()
@@ -35,21 +35,21 @@ public class AutoGenerateCode {
 				// 模板路径 示例："/src/main/resources/templates"
 				.templatePath(getRootPath())
 				//示例： "jdbc:mysql://192.168.26.129:3306/"
-				.dbUrl("jdbc:mysql://192.168.26.129:3306/")
+				.dbUrl("jdbc:mysql://rm-2zeh720m62s4v01f9.mysql.rds.aliyuncs.com:3306/")
 				//示例： "wstro"
-				.schema("wstro")
+				.schema("lx3_db")
 				//示例： "root"
-				.dbUsername("root")
+				.dbUsername("dbadmin")
 				//示例： "123456"
-				.dbPassword("root")
+				.dbPassword("1qaz!QAZ")
 
 
-				.entityPath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/entity")
-				.daoPath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/mapper")
-				.daoImplPath("E:/sourcecode/longchat-simple/src/main/resources/mapper")
-				.servicePath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/service")
-				.serviceImplPath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/service/impl")
-				.resourcePath("E:/sourcecode/longchat-simple/src/main/java/com/longfor/controller");
+				.entityPath("E:/sourcecode/dragonletter-appplat/src/main/java/com/longfor/entity")
+				.daoPath("E:/sourcecode/dragonletter-appplat/src/main/java/com/longfor/mapper")
+				.daoImplPath("E:/sourcecode/dragonletter-appplat/src/main/resources/mapper")
+				.servicePath("E:/sourcecode/dragonletter-appplat/src/main/java/com/longfor/service")
+				.serviceImplPath("E:/sourcecode/dragonletter-appplat/src/main/java/com/longfor/service/impl")
+				.resourcePath("E:/sourcecode/dragonletter-appplat/src/main/java/com/longfor/controller");
 
 		//配置2：哪些需要生成,哪些不要生成
 		GlobalConfig globalConfig = globalConfigBuilder
