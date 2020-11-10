@@ -66,6 +66,7 @@ public class AutoGenerateCode {
 		action.start(globalConfig, tbs, false);
 	}
 
+	
 	/**
 	 * Gets the root path of server.
 	 *
