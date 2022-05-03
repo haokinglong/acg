@@ -28,7 +28,7 @@ public class AutoGenerateCode {
         //配置1：数据库,文件路径配置
         GlobalConfig.GlobalConfigBuilder globalConfigBuilder = GlobalConfig.builder()
             //包名
-            .packageName("com.longfor")
+            .packageName("com.honey")
             //作者姓名
             .author("haojinlong")
             // 模板路径 示例："/src/main/resources/templates"
