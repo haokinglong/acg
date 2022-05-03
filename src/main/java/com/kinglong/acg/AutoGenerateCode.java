@@ -23,7 +23,7 @@ public class AutoGenerateCode {
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException, TemplateException {
         List<MetaTable> tbs = new ArrayList<>();
         //如果有多张表,请在这添加多张表的信息,表名即可,大小写均可
-        tbs.add(MetaTable.builder().name("rel_app_alm_result").build());
+        tbs.add(MetaTable.builder().name("user").build());
 
         //配置1：数据库,文件路径配置
         GlobalConfig.GlobalConfigBuilder globalConfigBuilder = GlobalConfig.builder()
