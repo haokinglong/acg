@@ -39,7 +39,7 @@ public class AutoGenerateCode {
 				//示例： "orcl"
 				.dbInstanceName("orcl")
 				//示例： "zz9x"
-				.dbUsername("grid_sqet")
+				.dbUsername("root")
 				//示例： "123456"
 				.dbPassword("oA1cC0cH1eK2qP0f")
 
